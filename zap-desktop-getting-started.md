@@ -12,10 +12,6 @@ Ok let's do this dance. Once you've started Zap you will see a screen titled "Ho
 
 This is part of our all new onboarding, allowing users to customize their Lightning experience. The "Custom" and "BTCPay Server" options are advanced features that allow you to enter credentials to connect to a remote LND node.
 
-<p align='center'>
-  <img src='https://i.imgur.com/IAyiUoy.png' alt='screenshot' />
-</p>
-
 But for this tutorial we are going to use "Default", which will use the LND-0.4.2-beta on testnet that's packaged with the app.
 
 Next you can set your node's nickname. However it is important to remember that these nicknames are NOT unique and one should _only_ verify nodes by their public key. This nickname will often times be shown in explorers and other Lightning UIs as it can sometimes improve the user experience. I will set mine to "jimmymow" which is my online handle.
