@@ -7,7 +7,7 @@ This tutorial assumes you have already downloaded the new Zap Desktop v0.1.2 fou
 Ok let's do this dance. Once you've started Zap you will see a screen titled "How do you want to connect to the Lightning Network?"
 
 <p align='center'>
-  <img src='https://i.imgur.com/QYsm8Kq.png' alt='screenshot' />
+  <img src='https://i.imgur.com/O5dqw8H.png' alt='screenshot' />
 </p>
 
 This is part of our all new onboarding, allowing users to customize their Lightning experience. The "Custom" option is a bit of an advanced feature and allows you to enter credentials to connect to a remote LND node.
