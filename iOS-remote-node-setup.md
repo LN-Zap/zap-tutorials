@@ -226,12 +226,12 @@ Now for the part we've all been waiting for: using a remote Lightning node from 
 
 Open the Zap app and select "Connect remote node":
 <p align='center'>
-  <img src='https://i.imgur.com/TpdBdT5.png' alt='screenshot' width='300' />
+  <img src='https://i.imgur.com/6DLTewp.png' alt='screenshot' width='300' />
 </p>
 
 Now you can select "scan" and scan your Zap Connect QRCode. This will populate the app with your cert and macaroon:
 <p align='center'>
-  <img src='https://i.imgur.com/VIIdwsO.jpg' alt='screenshot' width='300' />
+  <img src='https://i.imgur.com/gfYekV5.jpg' alt='screenshot' width='300' />
 </p>
 
 Verify that the `address` field is populated with your droplet's IP followed by `:10009`. Your IP can be found at your Digital Ocean dashboard:
