@@ -1,5 +1,5 @@
 # Zap iOS: Remote Node setup with Zap Connect tutorial
-Yo. We recently open sourced our Zap iOS app along with launching  a public BETA. The application currently has on-device LND support toggled off (it is not stable enough quite yet), but we do support connecting to a remote node. In this tutorial I will walk you through how to setup an LND node on a Digital Ocean droplet and connect it to your Zap iOS app in under 10 minutes.
+Yo. We recently open sourced our Zap iOS app along with launching a public alpha. The application currently has on-device LND support toggled off (it is not stable enough quite yet), but we do support connecting to a remote node. In this tutorial I will walk you through how to setup an LND node on a Digital Ocean droplet and connect it to your Zap iOS app in under 10 minutes.
 
 ## Create a Digital Ocean Droplet
 Once you have a Digital Ocean account create a droplet. Select Ubuntu under "Distributions" and a 1GB memory machine ($5/month).
@@ -249,6 +249,6 @@ This step is absolutely mandatory. You now have a 24/7 online remote Lightning N
 
 Now future versions of the app will have LND running on the device, technical details will be abstracted, it will be tailored towards a mainstream audience, etc. But you don't care. You couldn't wait. You want to experience the future. You want to help push Lightning forward. For that we thank you so much.
 
-A reminder that this application is in BETA. Please proceed with caution (very craefully). All bugs or suggested improvements can be reported to our github or communicated directly to us via slack.
+A reminder that this application is in alpha stage. Please proceed with caution (very craefully). All bugs or suggested improvements can be reported to our github or communicated directly to us via slack.
 
 Enjoy. Cheers friends.
