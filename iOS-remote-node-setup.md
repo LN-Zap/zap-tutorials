@@ -10,7 +10,7 @@ Once you have a Digital Ocean account create a droplet. Select Ubuntu under "Dis
 
 After you click "Create" you should see your new droplet in your Dashboard view.
 
-Once you create a Digital Ocean droplet you can follow this guide here to connect to your new droplet via `ssh`.
+Once you create a Digital Ocean droplet you can follow this guide [here](https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/) to connect to your new droplet via `ssh`.
 
 ## Downloading Go
 Now that we have a droplet and are connected via ssh, let's download the required dependencies.
