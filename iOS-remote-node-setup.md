@@ -207,8 +207,7 @@ To install Zap Connect run the following commands:
 ```
 $ go get -d github.com/LN-Zap/zapconnect
 $ cd $GOPATH/src/github.com/LN-Zap/zapconnect
-$ go get ./...
-$ go install -v ./...
+$ make
 ```
 
 Now simply run `zapconnect` to generate the QRCode we'll scan from our iPhone:
