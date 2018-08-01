@@ -243,6 +243,49 @@ Once you've scanned your Zap Connect QRCode and you've entered the address field
   <img src='https://i.imgur.com/Y9U0Hbm.png' alt='screenshot' width='300' />
 </p>
 
+
+## Optional: Certificates for remote usage (RaspiBolt tutorial)
+
+The certificates above do not support the LND options `tlsextraip` and `tlsextradomain` that are necessary to connect to the gRPC from a differenct location (eg. used for Zap wallet). Here's how you can create certificates that contain extra ip addresses and domain names.
+
+You can remove and add additional DNS and IP entries, just pay attention to the commas and line breaks.
+
+```
+$ sudo su - bitcoin
+$ openssl ecparam -genkey -name prime256v1 -out tls.key
+$ openssl req -new -sha256 \
+            -key tls.key \
+            -subj "/CN=localhost/O=lnd" \
+            -reqexts SAN \
+            -config <(cat /etc/ssl/openssl.cnf \
+                <(printf "\n[SAN]\nsubjectAltName=\
+                     DNS:localhost,\
+                     DNS:YOUR_DOMAIN_HERE,\
+                     IP:192.168.0.20,\
+                     IP:YOUR_IP_HERE\
+                 ")) \
+            -out csr.csr
+# verify the DNS and IP entries
+$ openssl req -in csr.csr -text -noout
+
+$ openssl req -x509 -sha256 -days 36500 \
+            -key tls.key \
+            -in csr.csr -out tls.cert \
+            -extensions SAN \
+            -config <(cat /etc/ssl/openssl.cnf \
+                <(printf "\n[SAN]\nsubjectAltName=\
+                     DNS:localhost,\
+                     DNS:YOUR_DOMAIN_HERE,\
+                     IP:192.168.0.20,\
+                     IP:YOUR_IP_HERE\
+                 "))
+# verify the DNS and IP entries
+$ openssl x509 -in tls.cert -text -noout
+```
+
+Copy these new certificates as described above to all locations and restart the lnd service. Now you should be able to connect remotely to your RaspiBolt again.
+[here](https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/) is more information on how to run your own lnd/bitcoin node on a RaspberryPI  
+
 ## Celebrate 🎊 🍻
 This step is absolutely mandatory. You now have a 24/7 online remote Lightning Network node set up with an application to drive it remotely from your iPhone.
 
