@@ -156,7 +156,7 @@ Now you can decide whether you'd like to run LND paired with your own Bitcoin fu
 
 Let's run the following line to start LND:
 ```
-$ lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --neutrino.connect=testnet2-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009
+$ lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009
 ```
 The above line starts `LND` on Bitcoin's testnet, signals for light client mode, connects to a couple of full nodes hosted at `zaphq.io`, turns on LND's [autopilot](https://github.com/lightningnetwork/lnd/tree/master/autopilot) feature, and lastly makes sure we are listening for gRPC connections.
 
