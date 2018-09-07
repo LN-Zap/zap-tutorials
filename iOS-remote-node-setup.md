@@ -154,9 +154,14 @@ Simply hit `enter` or `space` to continue.
 
 Now you can decide whether you'd like to run LND paired with your own Bitcoin full node (Bitcoin Core or BTCD) or if you'd like to run LND in its light client mode. To keep things brief this tutorial will use LND  in light client mode on testnet. If you'd like to explore other options see [LND's installation guide](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md).
 
+Get your public IP address so that we can add it to the TLS certificate:
+```
+wget -qO- ifconfig.co
+```
+
 Let's run the following line to start LND:
 ```
-$ lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009
+$ lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009 --tlsextraip=<YOUR_PUBLIC_IP>
 ```
 The above line starts `LND` on Bitcoin's testnet, signals for light client mode, connects to a couple of full nodes hosted at `zaphq.io`, turns on LND's [autopilot](https://github.com/lightningnetwork/lnd/tree/master/autopilot) feature, and lastly makes sure we are listening for gRPC connections.
 
