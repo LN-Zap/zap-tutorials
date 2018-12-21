@@ -1,6 +1,6 @@
 # Zap Desktop - Getting started
 
-If you want to watch a video tutorial click [here]().
+If you want to watch a video tutorial click [here](https://www.youtube.com/watch?v=Z2XDt7iKE7A&list=PLMj6UA3-f3cQq_TjCXAAeP1mmRnjgnDrI).
 
 This tutorial assumes you have already downloaded the new Zap Desktop v0.1.2 found [here](https://github.com/LN-Zap/zap-desktop/releases).
 
