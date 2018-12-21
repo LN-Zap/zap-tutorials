@@ -10,6 +10,7 @@
       - ZapDesktop-linux-amd64-v0.3.0-beta.deb
       - ZapDesktop-linux-i386-v0.3.0-beta.AppImage
       - ZapDesktop-linux-i386-v0.3.0-beta.deb
+      - ZapDesktop-linux-x86_64-v0.3.0-beta.AppImage
 
   ## Step 1: Creating your wallet
   Ok let's do this. Once you've started Zap you will see a screen titled "How do you want to connect to the Lightning Network?"
@@ -37,7 +38,7 @@
   </p>
 
   ## Step 4: Wallet password
-  Now you will set your wallet password. This password will be used to encrypt your wallet data. The password must be eight characters in length. You'll use this password to unlock your wallet on start up. If you lose this password the only way to gain access to your wallet is by way of recovery via your 24 word seed. Please back up this password and keep it safe!
+  Now you will set your wallet password. This password will be used to encrypt your wallet data. The password must be at least eight characters in length. You'll use this password to unlock your wallet on start up. If you lose this password the only way to gain access to your wallet is by way of recovery via your 24 word seed. Please back up this password and keep it safe!
 
   <p align='center'>
     <img src='https://imgur.com/goBhKWw.png' alt='screenshot' />
