@@ -2,91 +2,67 @@
 
 If you want to watch a video tutorial click [here](https://www.youtube.com/watch?v=Z2XDt7iKE7A&list=PLMj6UA3-f3cQq_TjCXAAeP1mmRnjgnDrI).
 
-This tutorial assumes you have already downloaded the new Zap Desktop v0.1.2 found [here](https://github.com/LN-Zap/zap-desktop/releases).
+  This tutorial assumes you have already downloaded the new Zap Desktop v0.3.0 found [here](https://github.com/LN-Zap/zap-desktop/releases).
 
-## Step 1: Connection
-Ok let's do this dance. Once you've started Zap you will see a screen titled "How do you want to connect to the Lightning Network?"
+  - Mac users will need to download ZapDesktop-darwin-v0.3.0-beta.dmg
+  - Windows users will need to download ZapDesktop-win32-v0.3.0-beta.exe
+  - Linux users will need to download one of the following:
+      - ZapDesktop-linux-amd64-v0.3.0-beta.deb
+      - ZapDesktop-linux-i386-v0.3.0-beta.AppImage
+      - ZapDesktop-linux-i386-v0.3.0-beta.deb
+      - ZapDesktop-linux-x86_64-v0.3.0-beta.AppImage
+
+## Step 1: Creating your wallet
+Ok let's do this. Once you've started Zap you will see a screen titled "How do you want to connect to the Lightning Network?"
 
 <p align='center'>
-  <img src='https://i.imgur.com/O5dqw8H.png' alt='screenshot' />
+  <img src='https://imgur.com/FGvdkmT.png' alt='screenshot' />
 </p>
 
-This is part of our all new onboarding, allowing users to customize their Lightning experience. The "Custom" and "BTCPay Server" options are advanced features that allow you to enter credentials to connect to a remote LND node.
+This is part of our all new onboarding, allowing users to create and manage multiple local, remote, and BTCPay server wallets.
 
-But for this tutorial we are going to use "Default", which will use the LND-0.4.2-beta on testnet that's packaged with the app.
+For this tutorial you are going to select "Create New Wallet", which will use the LND-0.5.1-beta on testnet that's packaged within Zap.
 
-## Step 2: Node nickname
-Next you can set your node's nickname. However it is important to remember that these nicknames are NOT unique and one should _only_ verify nodes by their public key. This nickname will often times be shown in explorers and other Lightning UIs as it can sometimes improve the user experience. I will set mine to "jimmymow" which is my online handle.
+## Step 2: Save your wallet seed
+Now you're given a 24 word seed that can be used to recover your wallet. Write this down and secure it somewhere safe. If anything ever happens to your desktop or wallet you can always recover on-chain funds with this seed.
 
 <p align='center'>
-  <img src='https://i.imgur.com/A4bRI2l.png' alt='screenshot' />
+  <img src='https://imgur.com/2zSSHWL.png' alt='screenshot' />
 </p>
 
-## Step 3: Autopilot
-Now we can decide if we would like [autopilot](https://github.com/lightningnetwork/lnd/tree/master/autopilot) on. Autopilot is an automatic channel manager that will use 60% of your wallet balance and open 5 channels max for you on the network. We strongly recommend using autopilot as it will make the onbaording easier and overall UX better, but of course it is not required. I will enable it for this tutorial but feel free to disable it if you'd like.
+## Step 3: Verify your seed
+Next, Zap will ask you to verify your seed by prompting you to enter three randomly selected words from your seed. Once entered correctly you'll see the inputs turn green and you can proceed. If you've entered the words incorrectly the Zap UI will turn the inputs red. 
 
 <p align='center'>
-  <img src='https://i.imgur.com/qRrjRKs.png' alt='screenshot' />
+  <img src='https://imgur.com/cRfgaL3.png' alt='screenshot' />
 </p>
 
 ## Step 4: Wallet password
-Now we will set our wallet password. This password will be used to encrypt your wallet data. Must be 8 characters in length. You'll use this password to unlock your wallet on app start up.
+Now you will set your wallet password. This password will be used to encrypt your wallet data. The password must be at least eight characters in length. You'll use this password to unlock your wallet on start up. If you lose this password the only way to gain access to your wallet is by way of recovery via your 24 word seed. Please back up this password and keep it safe!
 
 <p align='center'>
-  <img src='https://i.imgur.com/Gm4SBBX.png' alt='screenshot' />
+  <img src='https://imgur.com/goBhKWw.png' alt='screenshot' />
 </p>
 
-## Step 5: Create new wallet
-Now we are asked whether we'd like to create a new wallet or import an existing one. If you have your 24 word seed and would like to recover an LND wallet with Zap proceed with "Import existing wallet". For this tutorial we will create a new one.
+## Step 5: Wallet name
+Now you can create your wallet name. This is new to Zap. Your wallet's name will be used as a "handle" or "username" within your Zap Launchpad to help keep your wallet identifiable and organized now that Zap allows multiple wallets to be created.
 
 <p align='center'>
-  <img src='https://i.imgur.com/o5Agyxn.png' alt='screenshot' />
+  <img src='https://imgur.com/XqdiWGS.png' alt='screenshot' />
 </p>
 
-## Step 6: Store wallet seed
-Now we're given the 24 word seed that can be used to recover the wallet. Write this down and secure it somewhere safe. If anything ever happens to your desktop or wallet you can always recover with this seed.
+## Step 6: Autopilot
+Now you can decide if you would like autopilot on. Autopilot is an automatic channel manager. We strongly recommend using autopilot as it will make your onboarding easier and enhance the user experience, but of course it is not required. For this tutorial autopilot will be enabled but feel free to disable it if you’d like. These settings are configurable in your Zap Launchpad, so no pressure, these decisions aren't final.
 
 <p align='center'>
-  <img src='https://i.imgur.com/HNZdHNO.png' alt='screenshot' />
+  <img src='https://imgur.com/YtSFHtO.png' alt='screenshot' />
 </p>
 
-## Step 7: Verify seed
-Next Zap will ask you to verify your seed by entering 3 random indexes. If you've entered incorrectly the Zap UI will turn the text red. Once entered correctly you'll see the words turn green and you can proceed.
-
-## Step 8: Sync to the blockchain
-And with that, there she blows. Your node is now syncing to the blockchain. The syncing screen will give you an address to deposit to while you're waiting and will also show you progress and sync statistics below.
+## Step 7: Sync to the blockchain
+Your node is now syncing to the blockchain. The syncing screen will display an address to deposit to while you're waiting and will also show you syncing progress and statistics below. You'll only need to do a full sync once, which on testnet should take around 5 minutes given regular-good internet speed.
 
 <p align='center'>
-  <img src='https://i.imgur.com/FwkTozj.png' alt='screenshot' />
+  <img src='https://imgur.com/uJoN3L1.png' alt='screenshot' />
 </p>
 
-## Step 9: Open a channel
-Once we are synced you'll be able to see the all new Zap UI. Wallet header up top, activity feed below and network tab on the right.
-
-<p align='center'>
-  <img src='https://i.imgur.com/yXnIN7I.png' alt='screenshot' />
-</p>
-
-Zap recommends you some testnet nodes on the right to connect to if you need help getting started, otherwise you can click the "+" icon in the top right to create a channel or let autopilot work its magic once you deposit funds. I'll click "connect" next to Yalls and open a channel with them
-
-<p align='center'>
-  <img src='https://i.imgur.com/RMaLFsu.png' alt='screenshot' />
-</p>
-
-I set my channel amount to 0.1 BTC and click submit. Now I see my yalls channel loading over on the right.
-
-<p align='center'>
-  <img src='https://i.imgur.com/5fnT7Yu.png' alt='screenshot' />
-</p>
-
-After a few seconds the status changes to pending
-
-<p align='center'>
-  <img src='https://i.imgur.com/iHnmrlk.png' alt='screenshot' />
-</p>
-
-And there you go. You've created a Zap wallet and are about ready to have fun on Lightning. You can view your funding channel transaction in an explorer by clicking on your channel. Once the transaction gets sufficient confirmations it will be open and you can start transacting :)
-
-<p align='center'>
-  <img src='https://i.imgur.com/PzsEkV9.png' alt='screenshot' />
-</p>
+Congrats! You've created a Zap wallet and are ready to have fun on the Lightning Network. Once you have channels open you can start transacting via Lightning \o/
