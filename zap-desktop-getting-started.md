@@ -2,15 +2,15 @@
 
 If you want to watch a video tutorial click [here](https://www.youtube.com/watch?v=Z2XDt7iKE7A&list=PLMj6UA3-f3cQq_TjCXAAeP1mmRnjgnDrI).
 
-  This tutorial assumes you have already downloaded the new Zap Desktop v0.3.0 found [here](https://github.com/LN-Zap/zap-desktop/releases).
+  This tutorial assumes you have already downloaded the new Zap Desktop v0.3.1 found [here](https://github.com/LN-Zap/zap-desktop/releases).
 
-  - Mac users will need to download ZapDesktop-darwin-v0.3.0-beta.dmg
-  - Windows users will need to download ZapDesktop-win32-v0.3.0-beta.exe
+  - Mac users will need to download ZapDesktop-darwin-v0.3.1-beta.dmg
+  - Windows users will need to download ZapDesktop-win32-v0.3.1-beta.exe
   - Linux users will need to download one of the following:
-      - ZapDesktop-linux-amd64-v0.3.0-beta.deb
-      - ZapDesktop-linux-i386-v0.3.0-beta.AppImage
-      - ZapDesktop-linux-i386-v0.3.0-beta.deb
-      - ZapDesktop-linux-x86_64-v0.3.0-beta.AppImage
+      - ZapDesktop-linux-amd64-v0.3.1-beta.deb
+      - ZapDesktop-linux-i386-v0.3.1-beta.AppImage
+      - ZapDesktop-linux-i386-v0.3.1-beta.deb
+      - ZapDesktop-linux-x86_64-v0.3.1-beta.AppImage
 
 ## Step 1: Creating your wallet
 Ok let's do this. Once you've started Zap you will see a screen titled "How do you want to connect to the Lightning Network?"
