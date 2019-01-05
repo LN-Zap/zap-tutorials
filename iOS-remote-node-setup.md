@@ -21,13 +21,13 @@ $ sudo apt-get update
 $ sudo apt-get -y upgrade
 ```
 
-Next , let's download Go 1.10:
+Next , let's download Go 1.11:
 ```
-$ wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+$ wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
 ```
 Next, let's extract the files from the downloaded link:
 ```
-$ sudo tar -xvf go1.10.linux-amd64.tar.gz
+$ sudo tar -xvf go1.11.linux-amd64.tar.gz
 ```
 Lastly let's move the go folder to `/usr/local`:
 ```
@@ -68,10 +68,10 @@ export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ```
 ## Verify Go installation
-Just to make sure everything went ok we can run `go version` to ensure we have go 1.10 installed:
+Just to make sure everything went ok we can run `go version` to ensure we have go 1.11 installed:
 ```
 $ go version
-go version go1.10 linux/amd64
+go version go1.11 linux/amd64
 ```
 You can verify the environment variables you set with `go env`:
 ```
@@ -108,9 +108,14 @@ apt install make
 
 Run the following commands to install `LND`, `lncli` and all related dependencies:
 ```
-$ go get -d github.com/lightningnetwork/lnd
-$ cd $GOPATH/src/github.com/lightningnetwork/lnd
-$ make && make install
+$ wget https://github.com/lightningnetwork/lnd/releases/download/v0.5.1-beta/lnd-linux-amd64-v0.5.1-beta.tar.gz
+$ tar xf lnd-linux-amd64-v0.5.1-beta.tar.gz
+$ sudo mv ~/lnd-linux-amd64-v0.5.1-beta /usr/local/bin
+```
+
+Now we can move into the directory where LND lives:
+```
+$ cd /usr/local/bin/lnd-linux-amd64-v0.5.1-beta
 ```
 
 Before we start `LND`, let's start a terminal session via `screen`. Screen allows us to use multiple windows. Enter the following command to start screen:
@@ -159,9 +164,9 @@ Get your public IP address so that we can add it to the TLS certificate:
 wget -qO- ifconfig.co
 ```
 
-Let's run the following line to start LND:
+Now let's run the following line to start LND:
 ```
-$ lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009 --tlsextraip=<YOUR_PUBLIC_IP>
+$ ./lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009 --tlsextraip=<YOUR_PUBLIC_IP>
 ```
 The above line starts `LND` on Bitcoin's testnet, signals for light client mode, connects to a couple of full nodes hosted at `zaphq.io`, turns on LND's [autopilot](https://github.com/lightningnetwork/lnd/tree/master/autopilot) feature, and lastly makes sure we are listening for gRPC connections.
 
@@ -169,7 +174,9 @@ After executing the above line you will see your machine prompt you to use `lncl
 
 Now enter the following command:
 
-`lncli create`
+```
+./lncli create
+```
 
 You will see the following output. Create a password for your wallet and a passphrase for your cipher seed. Then make sure you write down the LND cipher seed you're given:
 ```
@@ -217,7 +224,7 @@ $ make
 
 Now simply run `zapconnect` to generate the QRCode we'll scan from our iPhone:
 ```
-$ zapconnect
+$ zapconnect --adminmacaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon
 ```
 This will generate a QRCode. Depending on your screen size use `cmd +` and `cmd -` to adjust the size of the QRCode:
 
@@ -228,14 +235,9 @@ This will generate a QRCode. Depending on your screen size use `cmd +` and `cmd�
 ## Connecting to our node with Zap iOS
 Now for the part we've all been waiting for: using a remote Lightning node from our iPhone.
 
-Open the Zap app and select "Connect remote node":
-<p align='center'>
-  <img src='https://i.imgur.com/6DLTewp.png' alt='screenshot' width='300' />
-</p>
-
 Now you can select "scan" and scan your Zap Connect QRCode. This will populate the app with your cert and macaroon:
 <p align='center'>
-  <img src='https://i.imgur.com/gfYekV5.jpg' alt='screenshot' width='300' />
+  <img src='https://imgur.com/OENNiDR.jpg' alt='screenshot' width='300' />
 </p>
 
 Verify that the `address` field is populated with your droplet's IP followed by `:10009`. Your IP can be found at your Digital Ocean dashboard:
@@ -245,7 +247,7 @@ Verify that the `address` field is populated with your droplet's IP followed by�
 
 Once you've scanned your Zap Connect QRCode and you've entered the address field click "Connect". Zap will also remember your connect information so you only have to setup your remote node once. A successful connection will take you into the Zap iOS application:
 <p align='center'>
-  <img src='https://i.imgur.com/Y9U0Hbm.png' alt='screenshot' width='300' />
+  <img src='https://imgur.com/JvTRD0J.jpg' alt='screenshot' width='300' />
 </p>
 
 
