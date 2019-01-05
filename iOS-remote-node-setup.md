@@ -68,7 +68,7 @@ export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ```
 ## Verify Go installation
-Just to make sure everything went ok we can run `go version` to ensure we have go 1.10 installed:
+Just to make sure everything went ok we can run `go version` to ensure we have go 1.11 installed:
 ```
 $ go version
 go version go1.11 linux/amd64
