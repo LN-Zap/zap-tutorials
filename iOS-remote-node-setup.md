@@ -65,7 +65,7 @@ fi
 mesg n || true
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/gocode
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$GOPATH/bin:$GOROOT/bin:/usr/local/bin/lnd-linux-amd64-v0.5.1-beta:$PATH
 ```
 ## Verify Go installation
 Just to make sure everything went ok we can run `go version` to ensure we have go 1.11 installed:
