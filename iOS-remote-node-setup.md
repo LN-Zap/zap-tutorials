@@ -1,4 +1,4 @@
-# Zap iOS: Remote Node setup with Zap Connect tutorial
+# Zap iOS: Remote Node setup with LND Connect tutorial
 Yo. We recently open sourced our Zap iOS app along with launching a public alpha. The application currently has on-device LND support toggled off (it is not stable enough quite yet), but we do support connecting to a remote node. In this tutorial I will walk you through how to setup an LND node on a Digital Ocean droplet and connect it to your Zap iOS app in under 10 minutes.
 
 ## Create a Digital Ocean Droplet
@@ -65,7 +65,7 @@ fi
 mesg n || true
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/gocode
-export PATH=$GOPATH/bin:$GOROOT/bin:/usr/local/bin/lnd-linux-amd64-v0.5.1-beta:$PATH
+export PATH=$GOPATH/bin:$GOROOT/bin:/usr/local/bin/lnd-linux-amd64-v0.5.2-beta:$PATH
 ```
 ## Verify Go installation
 Just to make sure everything went ok we can run `go version` to ensure we have go 1.11 installed:
@@ -108,14 +108,14 @@ apt install make
 
 Run the following commands to install `LND`, `lncli` and all related dependencies:
 ```
-$ wget https://github.com/lightningnetwork/lnd/releases/download/v0.5.1-beta/lnd-linux-amd64-v0.5.1-beta.tar.gz
-$ tar xf lnd-linux-amd64-v0.5.1-beta.tar.gz
-$ sudo mv ~/lnd-linux-amd64-v0.5.1-beta /usr/local/bin
+$ wget https://github.com/lightningnetwork/lnd/releases/download/v0.5.2-beta/lnd-linux-amd64-v0.5.2-beta.tar.gz
+$ tar xf lnd-linux-amd64-v0.5.2-beta.tar.gz
+$ sudo mv ~/lnd-linux-amd64-v0.5.2-beta /usr/local/bin
 ```
 
 Now we can move into the directory where LND lives:
 ```
-$ cd /usr/local/bin/lnd-linux-amd64-v0.5.1-beta
+$ cd /usr/local/bin/lnd-linux-amd64-v0.5.2-beta
 ```
 
 Before we start `LND`, let's start a terminal session via `screen`. Screen allows us to use multiple windows. Enter the following command to start screen:
@@ -212,19 +212,19 @@ Generating fresh cipher seed...
 lnd successfully initialized!
 ```
 
-## Zap Connect
-While our LND node is syncing let's setup Zap Connect. Zap Connect is a simple tool to transfer your cert, macaroon and IP to the iOS app for remote connection.
+## LND Connect
+While our LND node is syncing let's setup LND Connect. LND Connect is a simple tool to transfer your cert, macaroon and IP to the iOS app for remote connection.
 
-To install Zap Connect run the following commands:
+To install LND Connect run the following commands:
 ```
-$ go get -d github.com/LN-Zap/zapconnect
-$ cd $GOPATH/src/github.com/LN-Zap/zapconnect
+$ go get -d github.com/LN-Zap/lndconnect
+$ cd $GOPATH/src/github.com/LN-Zap/lndconnect
 $ make
 ```
 
-Now simply run `zapconnect` to generate the QRCode we'll scan from our iPhone:
+Now simply run `lndconnect` to generate the QRCode we'll scan from our iPhone:
 ```
-$ zapconnect --adminmacaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon
+$ lndconnect --adminmacaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon
 ```
 This will generate a QRCode. Depending on your screen size use `cmd +` and `cmd -` to adjust the size of the QRCode:
 
@@ -235,7 +235,7 @@ This will generate a QRCode. Depending on your screen size use `cmd +` and `cmd�
 ## Connecting to our node with Zap iOS
 Now for the part we've all been waiting for: using a remote Lightning node from our iPhone.
 
-Now you can select "scan" and scan your Zap Connect QRCode. This will populate the app with your cert and macaroon:
+Now you can select "scan" and scan your LND Connect QRCode. This will populate the app with your cert and macaroon:
 <p align='center'>
   <img src='https://imgur.com/OENNiDR.jpg' alt='screenshot' width='300' />
 </p>
@@ -245,7 +245,7 @@ Verify that the `address` field is populated with your droplet's IP followed by�
   <img src='https://i.imgur.com/Azx2fzb.png' alt='screenshot' />
 </p>
 
-Once you've scanned your Zap Connect QRCode and you've entered the address field click "Connect". Zap will also remember your connect information so you only have to setup your remote node once. A successful connection will take you into the Zap iOS application:
+Once you've scanned your LND Connect QRCode and you've entered the address field click "Connect". Zap will also remember your connect information so you only have to setup your remote node once. A successful connection will take you into the Zap iOS application:
 <p align='center'>
   <img src='https://imgur.com/JvTRD0J.jpg' alt='screenshot' width='300' />
 </p>
