@@ -13,7 +13,7 @@ If you want to watch a video tutorial click [here](https://www.youtube.com/watch
       - ZapDesktop-linux-x86_64-v0.4.0-beta.AppImage
 
 ## Step 1: Creating your wallet
-Ok let's do this. Once you've started Zap you will see a screen where you can elect how you'd like to use Lightning.
+Ok let's do this. Once you've started Zap you will see a screen where you can select how you'd like to use Lightning.
 
 <p align='center'>
   <img src='https://i.imgur.com/XH3UreT.png' alt='screenshot' />
@@ -56,7 +56,7 @@ Now, for the first time, you can select which network you would like to run on. 
 WARNING: You may lose your funds. Mainnet support is experimental and has not been thoroughly tested. Use Testnet to experiment without risk.
 ```
 
-Creating mainnet wallets inside of Zap is very risky and intended fot developers and advanced users to help test. You may lose funds on mainnet with neutrino, and we encourage those who would like to experiment without risk to use testnet.
+Creating mainnet wallets inside of Zap is very risky and intended for developers and advanced users to help test. You may lose funds on mainnet with neutrino, and we encourage those who would like to experiment without risk to use testnet.
 
 <p align='center'>
   <img src='https://i.imgur.com/i7XwRoO.png' alt='screenshot' />
