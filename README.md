@@ -1,8 +1,16 @@
-## Mobile
-- [Zap iOS: Remote Node setup with Zap Connect tutorial](https://ln-zap.github.io/zap-tutorials/iOS-remote-node-setup)
-- [Zap iOS: Remote Node setup with Docker](https://ln-zap.github.io/zap-tutorials/iOS-remote-node-setup-docker)
+# Readme
 
-## Desktop
-- [Zap Desktop: Getting Started](https://ln-zap.github.io/zap-tutorials/zap-desktop-getting-started)
-- [Zap Desktop: BTCPay Server](https://ln-zap.github.io/zap-tutorials/zap-desktop-btcpay-server)
+## Deploy locally
 
+```sh
+# yarn install
+yarn docz:dev
+```
+
+## Configuration
+
+Note that most of the configuration for the site are set in the `doczrc.js` file in the root directory.
+
+## Documentation for Docz
+
+This website is built using version `1.2` of Docz; you can find their documentation [here](https://docz-v1.surge.sh/).
