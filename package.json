@@ -4,12 +4,14 @@
   "description": "Tutorials and guides for Zap products.",
   "main": "index.js",
   "scripts": {
-    "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "dev": "docz dev",
+    "build": "docz build",
+    "deploy": "yarn build && gh-pages -t -d .docz/dist -r https://github.com/LN-Zap/zap-tutorials.git -o origin -b gh-pages"
   },
   "license": "MIT",
   "devDependencies": {
     "docz": "2.0.0-rc.21",
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
