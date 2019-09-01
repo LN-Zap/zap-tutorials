@@ -37,6 +37,7 @@ export default {
       ]
     }
   },
+  ignore: ["README.md"],
   themeConfig: {
     fonts: {
       body: "Roboto, system-ui, sans-serif",
