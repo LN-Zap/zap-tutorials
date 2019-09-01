@@ -25,7 +25,6 @@ export const colors = {
 };
 
 export default {
-  // public: "./public",
   htmlContext: {
     favicon: "public/images/favicon/favicon.ico",
     head: {
@@ -38,7 +37,6 @@ export default {
     }
   },
   themeConfig: {
-    initialColorMode: "dark",
     fonts: {
       body: "Roboto, system-ui, sans-serif",
       heading: "Roboto, system-ui, sans-serif",
@@ -160,5 +158,5 @@ export default {
     }
   },
   title: "Zap Documentation",
-  menu: ["General", "Community", "Desktop", "iOS"]
+  menu: ["General", "Community", "Desktop", "iOS", "Android"]
 };
