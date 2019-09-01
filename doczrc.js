@@ -61,13 +61,6 @@ export default {
         fontWeight: 400
       }
     },
-    styles: {
-      root: {
-        fontFamily: "body",
-        fontWeight: "body",
-        lineHeight: "body"
-      }
-    },
 
     // NOTE: Since the basetheme defines the initial colour mode as `light` we can not cxhange it here.
     // So in our theme, darks is actually light, and light is actually dark!
@@ -159,6 +152,19 @@ export default {
             color: colors.gray
           }
         }
+      }
+    },
+    styles: {
+      root: {
+        fontFamily: "body",
+        fontWeight: "body",
+        lineHeight: "body"
+      },
+      blockquote: {
+        bg: "blockquote.bg",
+        borderLeftWidth: 5,
+        borderLeftStyle: "solid",
+        borderLeftColor: "blockquote.border"
       }
     }
   },
