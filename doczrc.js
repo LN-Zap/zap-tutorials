@@ -25,5 +25,5 @@ export default {
     // }
   },
   title: "Zap Documentation",
-  menu: ["Introduction", "Tutorials", "Community"]
+  menu: ["Introduction", "Community", "Desktop", "iOS"]
 };
