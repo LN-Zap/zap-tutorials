@@ -1,10 +1,7 @@
----
-name: Introduction
-route: /
----
+import React from "react";
 
-<div align="center" style={{ marginTop: "3rem", marginBottom: "3rem" }}>
-  <svg height="100px" viewBox="0 0 22 22">
+const SvgZapLogo = props => (
+  <svg height="1em" viewBox="0 0 22 22" width="1em" {...props}>
     <g fill="none" fillRule="nonzero">
       <path
         d="M16.673 5.802a5.17 5.17 0 0 1 5.152 4.646 5.168 5.168 0 0 1-4.12 5.585.447.447 0 0 1-.524-.361.458.458 0 0 1 .352-.538c2.156-.436 3.625-2.422 3.405-4.59-.22-2.17-2.062-3.827-4.265-3.825h-1.191a.448.448 0 0 1-.431-.34c-.81-3.123-3.644-5.31-6.892-5.31-3.249 0-6.083 2.187-6.892 5.31a7.059 7.059 0 0 0 3.44 7.953c.217.12.298.397.182.62a.44.44 0 0 1-.604.188 7.985 7.985 0 0 1-3.88-8.997A8.006 8.006 0 0 1 8.159.153a8.007 8.007 0 0 1 7.658 5.65h.856z"
@@ -16,10 +13,6 @@ route: /
       />
     </g>
   </svg>
-  <h1>Bitcoin, for everyone.</h1>
-  <p>Tutorials and guides for Zap products.</p>
-</div>
+);
 
-> Lightning wallet focused on user experience and ease of use ⚡️
-
-Zap is a free Lightning Network wallet focused on user experience and ease of use, with the overall goal of helping the cryptocurrency community scale Bitcoin.
+export default SvgZapLogo;
