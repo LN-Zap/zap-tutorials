@@ -25,7 +25,6 @@ export const colors = {
 };
 
 export default {
-  // base: "/zap-tutorials/",
   public: "./public",
   htmlContext: {
     favicon: "public/images/favicon/favicon.ico",

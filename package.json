@@ -8,7 +8,7 @@
     "build": "docz build",
     "build:ci": "kill-port 3000 && (npm run dev &) && wait-on http-get://localhost:3000 && kill-port 3000 && npm run build",
     "clean": "rm -rf .docz",
-    "deploy": "docz build && netlify deploy --dir=.docz/dist/ --prod"
+    "deploy": "netlify deploy --dir=.docz/dist/ --prod"
   },
   "license": "MIT",
   "devDependencies": {
