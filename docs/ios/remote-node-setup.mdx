@@ -1,6 +1,5 @@
 ---
 name: Remote Node Setup
-route: /ios/remote-node-setup
 menu: iOS
 order: 1
 ---
@@ -31,26 +30,26 @@ Now that we have a droplet and are connected via ssh, let's download the require
 
 First let's ensure we have the latest security updates:
 
-```
+```bash
 $ sudo apt-get update
 $ sudo apt-get -y upgrade
 ```
 
 Next , let's download Go 1.11:
 
-```
+```bash
 $ wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
 ```
 
 Next, let's extract the files from the downloaded link:
 
-```
+```bash
 $ sudo tar -xvf go1.11.linux-amd64.tar.gz
 ```
 
 Lastly let's move the go folder to `/usr/local`:
 
-```
+```bash
 $ sudo mv go /usr/local
 ```
 
@@ -60,31 +59,31 @@ In order to use Go we have to make sure our `GOPATH`, `GOROOT` and `PATH` enviro
 
 First we'll setup `GOROOT`, which is where Go is installed on our machine. For us that's `/usr/local/go`:
 
-```
+```bash
 $ export GOROOT=/usr/local/go
 ```
 
 Next we'll setup our `GOPATH`. This is the location of our work directory. I will set up a folder at `/~/gocode`, feel free to replace the location/folder with your own preference:
 
-```
+```bash
 $ export GOPATH=$HOME/gocode
 ```
 
 Lastly we'll setup our `PATH` to access the binary system-wide:
 
-```
+```bash
 $ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ```
 
 We've only set these environment variables for the current session. If you'd like to make these permanent (recommended but not required) you can edit `~/.profile with nano`:
 
-```
+```bash
 $ nano ~/.profile
 ```
 
 An example `~/.profile` looks like this:
 
-```
+```bash
 # ~/.profile: executed by Bourne-compatible login shells.
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
@@ -101,14 +100,14 @@ export PATH=$GOPATH/bin:$GOROOT/bin:/usr/local/bin/lnd-linux-amd64-v0.5.2-beta:$
 
 Just to make sure everything went ok we can run `go version` to ensure we have go 1.11 installed:
 
-```
+```bash
 $ go version
 go version go1.11 linux/amd64
 ```
 
 You can verify the environment variables you set with `go env`:
 
-```
+```bash
 $ go env
 GOARCH="amd64"
 GOBIN=""
@@ -132,20 +131,21 @@ CGO_CXXFLAGS="-g -O2"
 CGO_FFLAGS="-g -O2"
 CGO_LDFLAGS="-g -O2"
 PKG_CONFIG="pkg-config"
-GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build005525529=/tmp/go-build -gno-record-gcc-switches"
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 \
+  -fdebug-prefix-map=/tmp/go-build005525529=/tmp/go-build -gno-record-gcc-switches"
 ```
 
 ## Setting up LND ([Source](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md))
 
 First let's install `make`, we will need it to install `LND`:
 
-```
+```bash
 apt install make
 ```
 
 Run the following commands to install `LND`, `lncli` and all related dependencies:
 
-```
+```bash
 $ wget https://github.com/lightningnetwork/lnd/releases/download/v0.5.2-beta/lnd-linux-amd64-v0.5.2-beta.tar.gz
 $ tar xf lnd-linux-amd64-v0.5.2-beta.tar.gz
 $ sudo mv ~/lnd-linux-amd64-v0.5.2-beta /usr/local/bin
@@ -153,44 +153,39 @@ $ sudo mv ~/lnd-linux-amd64-v0.5.2-beta /usr/local/bin
 
 Now we can move into the directory where LND lives:
 
-```
+```bash
 $ cd /usr/local/bin/lnd-linux-amd64-v0.5.2-beta
 ```
 
 Before we start `LND`, let's start a terminal session via `screen`. Screen allows us to use multiple windows. Enter the following command to start screen:
 
-```
+```bash
 $ screen
 ```
 
 It will give you some copyright info, helpful text, etc. that looks like this:
 
-```
+```markdown
 Screen version 4.03.01 (GNU) 28-Jun-15
-
 
 Copyright (c) 2010 Juergen Weigert, Sadrul Habib Chowdhury
 Copyright (c) 2008, 2009 Juergen Weigert, Michael Schroeder, Micah Cowan, Sadrul Habib Chowdhury
 Copyright (c) 1993-2002, 2003, 2005, 2006, 2007 Juergen Weigert, Michael Schroeder
 Copyright (c) 1987 Oliver Laumann
 
-
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3, or (at your
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3, or (at your
 option) any later version.
 
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
 Public License for more details.
 
-
-You should have received a copy of the GNU General Public License along with this program (see the file COPYING); if not, see http://www.gnu.org/licenses/, or contact Free Software Foundation, Inc., 51
-Franklin Street, Fifth Floor, Boston, MA  02111-1301  USA.
-
+You should have received a copy of the GNU General Public License along with this program (see the file COPYING); if
+not, see http://www.gnu.org/licenses/, or contact Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA 02111-1301 USA.
 
 Send bugreports, fixes, enhancements, t-shirts, money, beer & pizza to screen-devel@gnu.org
-
-
-
 
 Capabilities:
 +copy +remote-detach +power-detach +multi-attach +multi-user +font +color-256 +utf8 +rxvt +builtin-telnet
@@ -202,13 +197,13 @@ Now you can decide whether you'd like to run LND paired with your own Bitcoin fu
 
 Get your public IP address so that we can add it to the TLS certificate:
 
-```
+```bash
 wget -qO- ifconfig.co
 ```
 
 Now let's run the following line to start LND:
 
-```
+```bash
 $ ./lnd --bitcoin.active --bitcoin.testnet --debuglevel=debug --bitcoin.node=neutrino --neutrino.connect=testnet1-btcd.zaphq.io --autopilot.active --rpclisten=0.0.0.0:10009 --tlsextraip=<YOUR_PUBLIC_IP>
 ```
 
@@ -218,41 +213,36 @@ After executing the above line you will see your machine prompt you to use `lncl
 
 Now enter the following command:
 
-```
+```bash
 ./lncli create
 ```
 
 You will see the following output. Create a password for your wallet and a passphrase for your cipher seed. Then make sure you write down the LND cipher seed you're given:
 
-```
+```markdown
 Input wallet password:
 Confirm wallet password:
 
 Do you have an existing cipher seed mnemonic you want to use? (Enter y/n): n
 
-
 Your cipher seed can optionally be encrypted.
 Input your passphrase you wish to encrypt it (or press enter to proceed without a cipher seed passphrase):
 
-
 Generating fresh cipher seed...
 
-
 !!!YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET!!!
-
 
 ---------------BEGIN LND CIPHER SEED---------------
-1. above     2. useless   3. stick     4. dish
-5. prize     6. under     7. cricket   8. style
-9. fault    10. mix      11. expect   12. demand
-13. reunion  14. smart    15. churn    16. volcano
-17. item     18. fringe   19. harsh    20. fiction
-21. another  22. certain  23. dry      24. mass
----------------END LND CIPHER SEED-----------------
 
+1. above 2. useless 3. stick 4. dish
+2. prize 6. under 7. cricket 8. style
+3. fault 10. mix 11. expect 12. demand
+4. reunion 14. smart 15. churn 16. volcano
+5. item 18. fringe 19. harsh 20. fiction
+6. another 22. certain 23. dry 24. mass
+   ---------------END LND CIPHER SEED-----------------
 
 !!!YOU MUST WRITE DOWN THIS SEED TO BE ABLE TO RESTORE THE WALLET!!!
-
 
 lnd successfully initialized!
 ```
@@ -263,7 +253,7 @@ While our LND node is syncing let's setup LND Connect. LND Connect is a simple t
 
 To install LND Connect run the following commands:
 
-```
+```bash
 $ go get -d github.com/LN-Zap/lndconnect
 $ cd $GOPATH/src/github.com/LN-Zap/lndconnect
 $ make
@@ -271,7 +261,7 @@ $ make
 
 Now simply run `lndconnect` to generate the QRCode we'll scan from our iPhone:
 
-```
+```bash
 $ lndconnect --adminmacaroonpath=/root/.lnd/data/chain/bitcoin/testnet/admin.macaroon
 ```
 
@@ -313,7 +303,7 @@ The certificates above do not support the LND options `tlsextraip` and `tlsextra
 
 You can remove and add additional DNS and IP entries, just pay attention to the commas and line breaks.
 
-```
+```bash
 $ sudo su - bitcoin
 $ openssl ecparam -genkey -name prime256v1 -out tls.key
 $ openssl req -new -sha256 \

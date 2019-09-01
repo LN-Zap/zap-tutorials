@@ -24,69 +24,49 @@ export const colors = {
   lightRed: "#ffeded"
 };
 
-export const fontSizes = {
-  xxs: "8px",
-  xs: "10px",
-  s: "11px",
-  m: "13px",
-  l: "15px",
-  xl: "18px",
-  xxl: "30px",
-  xxxl: "60px"
-};
-
 export default {
-  // base: "/zap-docs/",
-  public: "./public",
+  // public: "./public",
   htmlContext: {
     favicon: "public/images/favicon/favicon.ico",
     head: {
       links: [
         {
           rel: "stylesheet",
-          href: "/public/global.css"
+          href: "public/global.css"
         }
       ]
     }
   },
   themeConfig: {
-    mode: "dark",
-    colors: {
-      primary: colors.white,
-      text: colors.white,
-      link: colors.lightningOrange,
-      // footerText: colors.grayDark,
-      sidebarBg: colors.underwaterBlue,
-      sidebarText: colors.white,
-      sidebarHighlight: null,
-      sidebarBorder: colors.gray,
-      background: colors.deepseaBlue,
-      border: colors.gray,
-      theadColor: colors.gray,
-      // theadBg: colors.grayExtraLight,
-      // tableColor: colors.dark,
-      codeBg: colors.underwaterBlue,
-      codeColor: colors.gray,
-      preBg: "green",
-      blockquoteBg: colors.underwaterBlue,
-      blockquoteBorder: colors.seaBlue,
-      blockquoteColor: colors.gray
+    initialColorMode: "dark",
+    fonts: {
+      body: "Roboto, system-ui, sans-serif",
+      heading: "Roboto, system-ui, sans-serif",
+      monospace: "'Lucida Console', Monaco, monospace"
     },
-    // logo: {
-    //   src: "/public/images/logo.png",
-    //   width: 150
-    // }
+    fontSizes: [11, 13, 15, 18, 24, 30, 40, 50],
+    fontWeights: {
+      body: 300,
+      heading: 400,
+      bold: 400
+    },
     styles: {
-      body: `
-        font-size: ${fontSizes.l};
-        line-height: 1.4em;
-        font-family: "Roboto", system-ui, sans-serif;
-        font-weight: 300;
-      `,
-      h1: `
-        font-size: ${fontSizes.xxl};
-        font-weight: 400;
-      `
+      h1: {
+        fontWeight: 400
+      },
+      h2: {
+        fontWeight: 400
+      },
+      h3: {
+        fontWeight: 400
+      }
+    },
+    styles: {
+      root: {
+        fontFamily: "body",
+        fontWeight: "body",
+        lineHeight: "body"
+      }
     }
   },
   title: "Zap Documentation",
