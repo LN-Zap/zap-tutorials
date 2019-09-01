@@ -68,54 +68,57 @@ export default {
         lineHeight: "body"
       }
     },
+
+    // NOTE: Since the basetheme defines the initial colour mode as `light` we can not cxhange it here.
+    // So in our theme, darks is actually light, and light is actually dark!
+    initialColorMode: "light",
     colors: {
+      primary: colors.lightningOrange,
+      accent: colors.lightningOrange,
+      text: colors.white,
+      muted: colors.gray,
+      link: colors.lightningOrange,
+      background: colors.deepseaBlue,
+      border: null,
+      sidebar: {
+        bg: colors.underwaterBlue,
+        navGroup: colors.gray,
+        navLink: colors.lightGray,
+        navLinkActive: colors.lightningOrange,
+        tocLink: colors.gray,
+        tocLinkActive: colors.lightningOrange
+      },
+      header: {
+        bg: colors.seaBlue,
+        text: colors.white,
+        border: colors.darkGray,
+        button: {
+          bg: colors.lightningOrange,
+          color: colors.white
+        }
+      },
+      props: {
+        bg: colors.deepseaBlue,
+        text: colors.white,
+        highlight: colors.hoverSeaBlue,
+        defaultValue: colors.darkGray,
+        descriptionText: colors.gray,
+        descriptionBg: colors.seaBlue
+      },
+      playground: {
+        bg: colors.darkGray,
+        border: colors.darkGray
+      },
+      blockquote: {
+        bg: colors.underwaterBlue,
+        border: colors.seaBlue,
+        color: colors.gray
+      },
+
       modes: {
         dark: {
-          ...colors,
           primary: colors.lightningOrange,
-          text: colors.white,
-          muted: colors.gray,
-          link: colors.lightningOrange,
-          background: colors.deepseaBlue,
-          border: null,
-          sidebar: {
-            bg: colors.underwaterBlue,
-            navGroup: colors.gray,
-            navLink: colors.lightGray,
-            navLinkActive: colors.lightningOrange,
-            tocLink: colors.gray,
-            tocLinkActive: colors.lightningOrange
-          },
-          header: {
-            bg: colors.seaBlue,
-            text: colors.white,
-            border: colors.darkGray,
-            button: {
-              bg: colors.lightningOrange,
-              color: colors.white
-            }
-          },
-          props: {
-            bg: colors.deepseaBlue,
-            text: colors.white,
-            highlight: colors.hoverSeaBlue,
-            defaultValue: colors.darkGray,
-            descriptionText: colors.gray,
-            descriptionBg: colors.seaBlue
-          },
-          playground: {
-            bg: colors.darkGray,
-            border: colors.darkGray
-          },
-          blockquote: {
-            bg: colors.underwaterBlue,
-            border: colors.seaBlue,
-            color: colors.gray
-          }
-        },
-        light: {
-          ...colors,
-          primary: colors.lightningOrange,
+          accent: colors.lightningOrange,
           text: colors.darkGray,
           muted: colors.gray,
           link: colors.lightningOrange,
