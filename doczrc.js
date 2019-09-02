@@ -159,12 +159,6 @@ export default {
         fontFamily: "body",
         fontWeight: "body",
         lineHeight: "body"
-      },
-      blockquote: {
-        bg: "blockquote.bg",
-        borderLeftWidth: 5,
-        borderLeftStyle: "solid",
-        borderLeftColor: "blockquote.border"
       }
     }
   },
