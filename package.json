@@ -6,13 +6,14 @@
   "scripts": {
     "dev": "docz dev",
     "build": "docz build",
+    "serve": "docz serve",
     "build:ci": "kill-port 3000 && (npm run dev &) && wait-on http-get://localhost:3000 && kill-port 3000 && npm run build",
     "clean": "rm -rf .docz",
     "deploy": "netlify deploy --dir=.docz/dist/ --prod"
   },
   "license": "MIT",
   "devDependencies": {
-    "docz": "2.0.0-rc.21",
+    "docz": "2.0.0-rc.25",
     "kill-port": "^1.5.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
