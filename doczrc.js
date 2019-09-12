@@ -27,15 +27,7 @@ export const colors = {
 export default {
   public: "./public",
   htmlContext: {
-    favicon: "public/images/favicon/favicon.ico",
-    head: {
-      links: [
-        {
-          rel: "stylesheet",
-          href: "public/global.css"
-        }
-      ]
-    }
+    favicon: "public/images/favicon/favicon.ico"
   },
   repository: "https://github.com/LN-Zap",
   website: "https://zaphq.io",
