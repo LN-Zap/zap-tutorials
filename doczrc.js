@@ -37,18 +37,53 @@ export default {
       ]
     }
   },
+  repository: "https://github.com/LN-Zap",
+  website: "https://zaphq.io",
   ignore: ["README.md"],
   themeConfig: {
     fonts: {
-      body: "Roboto, system-ui, sans-serif",
+      sans: "Roboto, system-ui, sans-serif",
       heading: "Roboto, system-ui, sans-serif",
       monospace: "'Lucida Console', Monaco, monospace"
     },
-    fontSizes: [11, 13, 15, 18, 24, 30, 40, 50],
+    letterSpacings: {
+      normal: "normal",
+      caps: "0.025em"
+    },
+    shadows: {
+      xs: "0 2px 3px 0 rgba(0, 0, 0, 0.3)",
+      s: "0 2px 4px 0 rgba(0, 0, 0, 0.4)",
+      m: "0 2px 24px 0 rgba(0, 0, 0, 0.5)",
+      l: "0 20px 70px 0 rgba(0, 0, 0, 0.6)"
+    },
+    fontSizes: {
+      xxs: "8px",
+      xs: "10px",
+      s: "13px",
+      m: "14px",
+      l: "16px",
+      xl: "40px",
+      xxl: "56px",
+      xxxl: "60px"
+    },
+    lineHeights: {
+      small: 1,
+      normal: 1.4,
+      heading: 1.2
+    },
+    radii: {
+      s: "5px",
+      m: "8px",
+      l: "14px",
+      xl: "24px",
+      xxl: "40px"
+    },
+    space: [0, 4, 8, 16, 32, 45, 72, 108],
     fontWeights: {
-      body: 300,
-      heading: 400,
-      bold: 400
+      heading: 700,
+      light: 300,
+      normal: 400,
+      bold: 700
     },
     styles: {
       h1: {
@@ -74,7 +109,7 @@ export default {
       background: colors.deepseaBlue,
       border: null,
       sidebar: {
-        bg: colors.underwaterBlue,
+        bg: "transparent",
         navGroup: colors.gray,
         navLink: colors.lightGray,
         navLinkActive: colors.lightningOrange,
@@ -82,7 +117,7 @@ export default {
         tocLinkActive: colors.lightningOrange
       },
       header: {
-        bg: colors.seaBlue,
+        bg: colors.deepseaBlue,
         text: colors.white,
         border: colors.darkGray,
         button: {
@@ -118,7 +153,7 @@ export default {
           background: colors.white,
           border: null,
           sidebar: {
-            bg: colors.underwaterGray,
+            bg: "transparent",
             navGroup: colors.gray,
             navLink: colors.darkGray,
             navLinkActive: colors.lightningOrange,
@@ -156,9 +191,10 @@ export default {
     },
     styles: {
       root: {
-        fontFamily: "body",
-        fontWeight: "body",
-        lineHeight: "body"
+        fontSize: "m",
+        fontFamily: "sans",
+        fontWeight: "light",
+        lineHeight: "normal"
       }
     }
   },

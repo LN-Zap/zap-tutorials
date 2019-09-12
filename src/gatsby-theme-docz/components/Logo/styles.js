@@ -1,16 +1,19 @@
 export const logo = {
-  letterSpacing: "-0.02em",
-  fontWeight: 300,
-  fontSize: 4
+  alignItems: "center"
+};
+
+export const menu = {
+  ml: 5
 };
 
 export const link = {
-  fontWeight: 300,
   color: "header.text",
   textDecoration: "none",
   ":hover": {
     color: "primary"
   },
-  ml: 3,
-  pb: 1
+  mr: 4,
+  pb: 1,
+  fontWeight: "normal",
+  fontSize: "m"
 };
