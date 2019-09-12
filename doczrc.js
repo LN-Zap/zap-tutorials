@@ -113,8 +113,9 @@ export default {
         text: colors.white,
         border: colors.darkGray,
         button: {
-          bg: colors.lightningOrange,
-          color: colors.white
+          bg: colors.seaBlue,
+          color: colors.white,
+          hover: colors.lightningOrange
         }
       },
       props: {
@@ -157,8 +158,9 @@ export default {
             text: colors.darkGray,
             border: colors.lightGray,
             button: {
-              bg: colors.lightningOrange,
-              color: colors.white
+              bg: colors.underwaterGray,
+              color: colors.white,
+              hover: colors.lightningOrange
             }
           },
           props: {

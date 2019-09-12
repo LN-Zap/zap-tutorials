@@ -1,9 +1,15 @@
+export const wrapper = {
+  alignItems: "center",
+  fontSize: "m",
+  lineHeight: "small"
+};
+
 export const logo = {
-  alignItems: "center"
+  mr: 6
 };
 
 export const menu = {
-  ml: 5
+  mr: 4
 };
 
 export const link = {
@@ -13,7 +19,6 @@ export const link = {
     color: "primary"
   },
   mr: 4,
-  pb: 1,
   fontWeight: "normal",
   fontSize: "m"
 };

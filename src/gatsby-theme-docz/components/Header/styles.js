@@ -20,7 +20,7 @@ export const innerContainer = {
 export const headerButton = {
   ...mixins.centerAlign,
   outline: "none",
-  p: "12px",
+  p: 3,
   border: "none",
   borderRadius: 9999,
   bg: "header.button.bg",
@@ -28,7 +28,12 @@ export const headerButton = {
   fontSize: 0,
   fontWeight: 600,
   ":hover": {
-    cursor: "pointer"
+    cursor: "pointer",
+    bg: "header.button.hover"
+  },
+  svg: {
+    width: "14px",
+    height: "14px"
   }
 };
 
@@ -41,5 +46,9 @@ export const editButton = {
   color: "muted",
   fontSize: 1,
   textDecoration: "none",
-  borderRadius: "radius"
+  borderRadius: "radius",
+  svg: {
+    width: "14px",
+    height: "14px"
+  }
 };
