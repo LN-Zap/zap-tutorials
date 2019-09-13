@@ -9,7 +9,7 @@ export const wrapper = {
 
 export const innerContainer = {
   ...mixins.centerAlign,
-  px: 0,
+  px: 3,
   py: 3,
   position: "relative",
   justifyContent: "space-between",
