@@ -47,6 +47,6 @@ a {
   color: inherit;
 }
 
-pre {
+pre, code {
   font-family: "Lucida Console", Monaco, monospace;
 }
