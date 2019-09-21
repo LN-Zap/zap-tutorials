@@ -193,5 +193,14 @@ export default {
     }
   },
   title: "Zap Documentation",
-  menu: ["General", "Community", "Desktop", "iOS", "Android"]
+  menu: [
+    "General",
+    "Community",
+    {
+      name: "Desktop",
+      menu: ["Getting Started", "BTCPay Server", "Neutrino Remote Control"]
+    },
+    "iOS",
+    "Android"
+  ]
 };
