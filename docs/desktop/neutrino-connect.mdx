@@ -1,0 +1,54 @@
+---
+name: Neutrino Remote Control
+menu: Desktop
+---
+
+# Neutrino Remote Control
+
+This tutorial assumes that you have already downloaded and installed Zap and created a wallet. If not, please head over
+to our [getting started guide](/docs-desktop-getting-started).
+
+Zap installs [lnd](https://github.com/lightninglabs/lnd) for you as part of the installation process. Zap will
+automatically start the internal lnd daemon for you when you select the default connection type during the on-boarding
+process. In this mode we run lnd as a light client called neutrino ([BIP 157](https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki) & [BIP 158](https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki)) which allows us to run lnd without
+requiring a Bitcoin full node on your system - Instead, Zap will connect to one of Zap's hosted BTC full nodes in order
+to retrieve information from the blockchain.
+
+## Connecting to the lnd node
+
+For some advanced use cases you may wish to connect directly to Zap's internal lnd daemon so that you can control it
+programmatically, without using the Zap user interface. There are two ways that you can do this:
+
+### gRPC
+
+By default, we make lnd's [gRPC](https://grpc.io/) interface accessible at `localhost:11009`.
+
+Documentation for lnd's
+gRPC API is available [here](https://api.lightning.community/#lnd-grpc-api-reference).
+
+### REST
+
+By default, we make lnd's [REST](https://www.codecademy.com/articles/what-is-rest) interface accessible at
+`localhost:8180`.
+
+Documentation for lnd's
+REST API is available [here](https://api.lightning.community/rest).
+
+## TLS/SSL & Macaroons
+
+Two things are needed in order to make a gRPC or HTTP request to an lnd instance: a TLS/SSL connection and a macaroon
+used for RPC authentication.
+
+The macaroons for your lnd node will be located within your Zap data directory, found in one of the following locations:
+
+- **Mac:** `~/Library/Application Support/Zap/lnd/bitcoin/mainnet/wallet-1/data/chain/bitcoin/mainnet`
+- **Linux:** `~/.config/Zap/lnd/bitcoin/mainnet/wallet-1/data/chain/bitcoin/mainnet`
+- **Windows:** `%APPDATA%\Zap\lnd\bitcoin\mainnet\wallet-1\data\chain\bitcoin\mainnet`
+
+_Note: If you have created multiple wallets within Zap, the location may vary._
+
+## Connecting externally
+
+By default the gRPC and REST interfaces are only accessible from the localhost. If you would like to access your node
+from another machine you will need to adjust Zap's config files and rebuild Zap from source. Please refer to
+our [technical documentation](https://github.com/LN-Zap/zap-desktop/tree/master/docs) for more details.
