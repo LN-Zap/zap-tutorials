@@ -18,5 +18,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "wait-on": "^3.3.0"
+  },
+  "resolutions": {
+    "scheduler": "0.15.0"
   }
 }
