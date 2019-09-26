@@ -3957,10 +3957,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-components@2.0.0-rc.41:
-  version "2.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/docz-components/-/docz-components-2.0.0-rc.41.tgz#983dbc1fd9e94646672cc981ad9b6900118a0655"
-  integrity sha512-sfD8AqwxUvFRxj5HXOSZXNjodSgHJwr/H9wFw0PiIxiwriDOMbtkJ1SloMZJt1fft1wH4yXFuY7BPen52H/hug==
+docz-components@2.0.0-rc.42:
+  version "2.0.0-rc.42"
+  resolved "https://registry.yarnpkg.com/docz-components/-/docz-components-2.0.0-rc.42.tgz#3e07a36736b2274b638ca77d8268a70e62d83dcb"
+  integrity sha512-hLXJYquGbCzgItqfaXV7voCEIeBPjt1W5iIQ9EAeEi5N9T79JcK1njRZ+Oka9TKTK38odzytXw+Gkw3lJhYxAQ==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.4.0"
@@ -3974,10 +3974,10 @@ docz-components@2.0.0-rc.41:
     theme-ui "^0.2.38"
     typography-theme-moraga "^0.16.19"
 
-docz-core@2.0.0-rc.41:
-  version "2.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.41.tgz#38e0a5b4d50aa3303a3cdc3fd96de5667929a84d"
-  integrity sha512-9u91GAc6nzQZ5yevVApMcMsvs3ylTkIt77gEmAfZB533b3uqO7WX0Lq9w2sNDtchEtyoeeu8sW2QdTdP41VJfA==
+docz-core@2.0.0-rc.42:
+  version "2.0.0-rc.42"
+  resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-2.0.0-rc.42.tgz#6ffa87a197b1734cc252d666b2b93f0ae3f765ec"
+  integrity sha512-BtPTK50U+f93M4ua+7JY7TdMJ7wCv7o5x+X5o7Ys3r5NYjlxp3SXZcOAY0hPdT6LlaKxUMXkpmI47kCyGMR40A==
   dependencies:
     "@sindresorhus/slugify" "^0.9.1"
     chalk "^2.4.2"
@@ -4038,22 +4038,22 @@ docz-utils@^2.0.0-rc.1:
     unist-util-is "^3.0.0"
     unist-util-visit "^1.4.1"
 
-docz@2.0.0-rc.41:
-  version "2.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.41.tgz#454ec2e7465e8084b55df6e68b2545f3695d0af6"
-  integrity sha512-yDCUufWY8MMQKoUzGJbOJctxXjXYCYs4tETWdc0A1vT1b8d6RnsUww16/SGwo+PzEkGl8vRMOUjnEYXo4QV/pA==
+docz@2.0.0-rc.42:
+  version "2.0.0-rc.42"
+  resolved "https://registry.yarnpkg.com/docz/-/docz-2.0.0-rc.42.tgz#1c7fecf8fdb8f17b5ecaabda0b2243fd5e50b2f0"
+  integrity sha512-dHn1n5VbRKPINrpe81OH3WuxxuCZ6uD7N1ACw1PCoK4TS4k/4Vyoft83JdgYphaKl3+zxEbhnTYhMz/L46YAHg==
   dependencies:
     "@emotion/core" "^10.0.16"
     "@mdx-js/react" "^1.0.27"
     array-sort "^1.0.0"
     capitalize "^2.0.0"
-    docz-components "2.0.0-rc.41"
-    docz-core "2.0.0-rc.41"
+    docz-components "2.0.0-rc.42"
+    docz-core "2.0.0-rc.42"
     fast-deep-equal "^2.0.1"
     gatsby "^2.13.27"
     gatsby-plugin-eslint "^2.0.5"
     gatsby-plugin-typescript "^2.1.6"
-    gatsby-theme-docz "2.0.0-rc.41"
+    gatsby-theme-docz "2.0.0-rc.42"
     lodash "^4.17.14"
     marksy "^8.0.0"
     match-sorter "^3.1.1"
@@ -5464,10 +5464,10 @@ gatsby-telemetry@^1.1.25:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-docz@2.0.0-rc.41:
-  version "2.0.0-rc.41"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.41.tgz#71bd9d4233b2be9492b55a16cd57fc3afd05ada7"
-  integrity sha512-zVFZcT/ahD1q9p8A68VNcEAJB/bo9h8wijoDuIviWEHpJPag2ha4WspPppqV8hskWmkolYK9lp66SsyV5vm7Tg==
+gatsby-theme-docz@2.0.0-rc.42:
+  version "2.0.0-rc.42"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-docz/-/gatsby-theme-docz-2.0.0-rc.42.tgz#20b82cd36eea876d93a0cdcd3ab9d55dde8b1e9e"
+  integrity sha512-tBpq6ppco7ob8WTqOOQ8gSdv6xvTtmpq94X7U8OHd7JLJqje6e/BhdAJXL6XulTcUg7aTr7UW/kE4mQOVvzE9g==
   dependencies:
     "@emotion/core" "^10.0.14"
     "@emotion/styled" "^10.0.14"
@@ -5477,8 +5477,8 @@ gatsby-theme-docz@2.0.0-rc.41:
     "@theme-ui/typography" "^0.2.5"
     babel-plugin-export-metadata "^2.0.0-rc.1"
     copy-text-to-clipboard "^2.1.0"
-    docz "2.0.0-rc.41"
-    docz-core "2.0.0-rc.41"
+    docz "2.0.0-rc.42"
+    docz-core "2.0.0-rc.42"
     emotion-theming "^10.0.14"
     fs-extra "^8.1.0"
     gatsby "^2.13.27"
