@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "docz": "2.0.0-rc.42",
+    "docz": "2.0.0-rc.44",
     "kill-port": "^1.5.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
