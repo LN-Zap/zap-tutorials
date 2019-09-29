@@ -198,7 +198,13 @@ export default {
     "Community",
     {
       name: "Desktop",
-      menu: ["Getting Started", "BTCPay Server", "Neutrino Remote Control"]
+      menu: [
+        "Getting Started",
+        "BTCPay Server",
+        "LND Remote Control",
+        "LND Configuration",
+        "Neutrino Remote Control"
+      ]
     },
     "iOS",
     "Android"

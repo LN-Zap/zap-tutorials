@@ -1,17 +1,11 @@
 ---
-name: Custom Node Connection
+name: LND Configuration
 menu: Desktop
 ---
 
-# Connecting to an External LND Node
+# Configuring LND for use with Zap
 
-This tutorial assumes that you already have an [LND node](https://github.com/lightningnetwork/lnd) up and running - either on
-another computer or on your local machine.
-
-## Step 1: Configuring LND
-
-In order to connect Zap to your own lnd node you must first ensure that your node is accessible from the computer where you
-intend to run Zap. There are several considerations for this:
+In order to connect Zap to your own lnd node you must first ensure that your node is accessible from the computer where you intend to run Zap. There are several coniderations for this:
 
 ### Configure TLS Certificate
 
@@ -155,26 +149,6 @@ $ lndconnect -j --adminmacaroonpath=/path/to/admin.macaroon --tlscertpath=/path/
 ```sh
 $ lndconnect --help
 ```
-
-## Step 2: Connecting from Zap
-
-Now that all of the hard work is out of the way, here comes the fun part!
-
-### Create a new wallet in Zap
-
-![connect](../../public/images/screenshots/desktop-connection-type-connect.png)
-
-### Paste in your LND Connect string
-
-![lndconnect](../../public/images/screenshots/desktop-connection-lndconnect.png)
-
-### Verify your hostname
-
-![verify](../../public/images/screenshots/desktop-connection-verify.png)
-
-### Control your node!
-
-![wallet](../../public/images/screenshots/desktop-wallet.png)
 
 ## Troubleshooting
 
