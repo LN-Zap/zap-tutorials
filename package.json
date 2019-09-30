@@ -7,19 +7,13 @@
     "dev": "docz dev",
     "build": "docz build",
     "serve": "docz serve",
-    "build:ci": "kill-port 3000 && (npm run dev &) && wait-on http-get://localhost:3000 && kill-port 3000 && npm run build",
     "clean": "rm -rf .docz",
     "deploy": "netlify deploy --dir=.docz/dist/ --prod"
   },
   "license": "MIT",
   "devDependencies": {
-    "docz": "2.0.0-rc.50",
-    "kill-port": "^1.5.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "wait-on": "^3.3.0"
-  },
-  "resolutions": {
-    "scheduler": "0.15.0"
+    "docz": "2.0.0-rc.51",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
   }
 }
