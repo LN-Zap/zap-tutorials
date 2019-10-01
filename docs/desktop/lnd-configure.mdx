@@ -5,7 +5,7 @@ menu: Desktop
 
 # Configuring LND for use with Zap
 
-In order to connect Zap to your own lnd node you must first ensure that your node is accessible from the computer where you intend to run Zap. There are several coniderations for this:
+In order to connect Zap to your own lnd node you must first ensure that your node is accessible from the computer where you intend to run Zap. There are several considerations for this:
 
 ### Configure TLS Certificate
 
@@ -42,7 +42,7 @@ tlsextraip=11.22.33.44
 
 #### 2) Configure an Extra Domain
 
-Using LND's `tlsextradomain` setting you can add additional doman names to the TLS certificate. This will allow connecting to LND using a domain name in adddition to or instead of an IP address.
+Using LND's `tlsextradomain` setting you can add additional domain names to the TLS certificate. This will allow connecting to LND using a domain name in addition to or instead of an IP address.
 
 Edit your LND node's `lnd.conf` file and set the `tlsextradomain` directive:
 
@@ -67,7 +67,7 @@ tlsextradomain=mynode.example.com
 
 #### Regenerate TLS Certificate
 
-After making either of the above changes you must ask LND to regnerate the TLS certificate. You can do this by deleting the old certificate and restarting your node. For example.
+After making either of the above changes you must ask LND to regenerate the TLS certificate. You can do this by deleting the old certificate and restarting your node. For example.
 
 1. Remove the old TLS certificate:
 
@@ -95,13 +95,13 @@ Edit your `lnd.conf` file and set the `rpclisten` directive:
 rpclisten: [HOST]:[PORT]
 ```
 
-Replace `[HOST]:[PORT]` with the interface to listen on for gRPC connections. For example, to accept connections on all external interaces, you would set it like so:
+Replace `[HOST]:[PORT]` with the interface to listen on for gRPC connections. For example, to accept connections on all external interfaces, you would set it like so:
 
 ```toml
 rpclisten=0.0.0.0:10009
 ```
 
-You can enter multiple listen address by repeating the directive over multiple lines. For example, to listen only on `localhost` and `1.2.3.4`:
+You can enter multiple listen addresses by repeating the directive over multiple lines. For example, to listen only on `localhost` and `1.2.3.4`:
 
 ```toml
 rpclisten=localhost:10009
@@ -110,7 +110,7 @@ rpclisten=1.2.3.4:10009
 
 ### Port Forwarding
 
-If you are running your LND node behind a network router, you may need to set up port forwarding to ensure that incoming trafic to port `10009` is directed to your lnd node.
+If you are running your LND node behind a network router, you may need to set up port forwarding to ensure that incoming traffic to port `10009` is directed to your lnd node.
 
 Steps to do this will be dependent on your network configuration. On a typical home network this must be configured on your router.
 
@@ -118,13 +118,13 @@ Steps to do this will be dependent on your network configuration. On a typical h
 
 Now you have LND configured properly you are ready to generate a connection string. Download and install [LND Connect](https://github.com/LN-Zap/lndconnect) onto the machine where lnd is running.
 
-Once installed, use lndconnect to geneate a connection string for your node.
+Once installed, use lndconnect to generate a connection string for your node.
 
 ```sh
 $ lndconnect -j
 ```
 
-You may need to pass additional options to the `lndconnect` command in order to ensure that id generate the desired connection string. Common options include:
+You may need to pass additional options to the `lndconnect` command in order to ensure that it generates the desired connection string. Common options include:
 
 **Use a specific host:**
 
@@ -152,11 +152,11 @@ $ lndconnect --help
 
 ## Troubleshooting
 
-Clearly the hardest part of all of this is configuring your LND ndoe and ensuring that it is properly accessible. Here are some things to check incase you run into any issues.
+Clearly the hardest part of all of this is configuring your LND node and ensuring that it is properly accessible. Here are some things to check in case you run into any issues.
 
 ### Test your connection
 
-Verify that you can access LND's port gRPC interface from the compauter where you are runnign Zap:
+Verify that you can access LND's port gRPC interface from the computer where you are running Zap:
 
 ```sh
 telnet 1.2.3.4 10009
@@ -170,4 +170,4 @@ You can verify that your TLS cert contains the updated details using the followi
 $ openssl x509 -text -noout -in ~/.lnd/tls.cert
 ```
 
-You should see your addditional whitelisted IP addresses and/or domain names in the `Subject Alternative Name` section.
+You should see your additional whitelisted IP addresses and/or domain names in the `Subject Alternative Name` section.
