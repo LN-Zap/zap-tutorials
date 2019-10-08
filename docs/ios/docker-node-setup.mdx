@@ -55,12 +55,12 @@ Follow the instructions and remember to write down the seed words.
 **NOTE**
 Every time you restart the container, you need to run `docker exec -u lnd -it lnd-node lncli unlock` to _unlock_ your wallet.
 
-### Zap Connect
+### LND Connect
 
-Now let's try to connect to our LND node from Zap. We have included a tool called [zapconnect](https://github.com/LN-Zap/zapconnect) in the container for convenience. It will generate a QR code that you can scan from Zap to get all the required configuration.
+Now let's try to connect to our LND node from Zap. We have included a tool called [lndconnect](https://github.com/LN-Zap/lndconnect) in the container for convenience. It will generate a QR code that you can scan from Zap to get all the required configuration.
 
 ```bash
-docker exec -u lnd -it lnd-node zapconnect --bitcoin.active --bitcoin.testnet
+docker exec -u lnd -it lnd-node lndconnect --bitcoin.active --bitcoin.testnet
 ```
 
 Scan the QR code from Zap by selecting "Connect Remote Node" -> "Scan". Most likely you need to zoom your terminal to view the whole QR code.
