@@ -67,12 +67,12 @@ tlsextradomain=mynode.example.com
 
 #### Regenerate TLS Certificate
 
-After making either of the above changes you must ask LND to regenerate the TLS certificate. You can do this by deleting the old certificate and restarting your node. For example.
+After making either of the above changes you must ask LND to regenerate the TLS certificate. You can do this by deleting the old certificate files and restarting your node. For example.
 
-1. Remove the old TLS certificate:
+1. Remove the old TLS certificate and key:
 
 ```sh
-$ rm ~/.lnd/tls.cert
+$ rm ~/.lnd/tls.cert ~/.lnd/tls.key
 ```
 
 2. Restart the LND node (this command may vary, depending on how you are running your node):
