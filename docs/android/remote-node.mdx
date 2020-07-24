@@ -3,24 +3,64 @@ name: Remote Node Setup
 menu: Android
 ---
 
-# Remote Node Setup for Zap Android
+# Remote Node Setup
 
-You can use Zap Android to connect and control a remote LND node.
+You can use Zap Android to connect and control your own LND node. <br />
 
-### Step 1: Setting up a remote node
+In case you don't already have an own LND node, you can create one with the project found below.<br />
+After your node is setup, you either have to use a displayed QR-Code or a pastable string to finally connect Zap Android to your node.
 
-The setup process is identical to a remote node setup with iOS.
 
-Please refer to the one of the following iOS guides for setting up a remote node.
+To get there, you can either setup everything [from scratch] (/docs-android-manual-remote-node) or use some of the following projects that simplify the process: (alphabetically ordered)
+<br />
 
-- [Setup with docker](/docs-ios-docker-node-setup)
-- [manual setup](/docs-ios-remote-node-setup)
+### BTCPay:
+BTCPay is designed for merchants that want to accept bitcoin payments.<br />
+It is open source and supports on-chain and lightning payments.
 
-### Step 2: Connect Zap Android with your node
+Visit the [website](https://btcpayserver.org/)
 
-- After starting Zap Android, go to "Setup Wallet".
-- Enter a pin to protect your wallet.
-- On the following screen choose "Connect to Remote Node".
-- Scan the qr-code generated in the iOS guides.
+How to connect Zap:<br />
+[Guide](http://localhost:3000/docs-desktop-btcpay-server#step-2-obtain-btcpay-connection-details)
+<br />
 
-Congrats! You are now able to control your node from your Android phone! Once you have channels open you can start transacting via Lightning!
+### myNode:
+myNode aims to be the easiest way to run a dedicated, easy to use, Bitcoin Node and Lightning Wallet!
+
+Visit the [website](https://mynodebtc.com/)
+
+How to connect Zap:<br />
+[Guide](https://mynodebtc.com/guide/zap)
+<br />
+
+### Nayuta Core:
+Nayuta Core is a full node solution with LND that runs directly on an Android phone!<br />
+Still in closed beta...
+<br />
+
+### nodl:
+nodl is an open-source project aimed at providing users with the tools to be financially sovereign through the use of hardware and software that respects your privacy. 
+
+Visit the [website](https://www.nodl.it/)
+
+How to connect Zap:<br />
+
+1. Go to the LND tile
+2. LND Configuration
+3. gRPC (Zap) QR-Code (hidden for your safety, don't show if anyone's watching)
+4. click show / hide button
+
+<br />
+
+### Raspiblitz:
+Build your own Lightning Node on a RaspberryPi with a nice Display.
+
+Visit the [website](https://github.com/rootzoll/raspiblitz)
+
+How to connect Zap:<br />
+
+1. Go to the MOBILE menu
+2. Choose ZAP_ANDROID
+3. follow the instructions
+
+<br />
