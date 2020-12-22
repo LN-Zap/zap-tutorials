@@ -22,13 +22,13 @@ Using LND's `tlsextraip` setting you can add additional IP addresses to the TLS 
 Edit your LND node's `lnd.conf` filefile and set the `tlsextraip` directive:
 
 ```toml
-tlsextraip: [YOUR_IP]
+tlsextraip=[YOUR_IP]
 ```
 
 Replace `[YOUR_IP]` with the IP address of your node. For example, if your LND node has an external IP address `1.2.3.4` you would set it like so:
 
 ```toml
-tlsextraip: 1.2.3.4
+tlsextraip=1.2.3.4
 ```
 
 This will allow you to connect to the LND node's gRPC or REST interface using your nodes external IP Address.
@@ -47,13 +47,13 @@ Using LND's `tlsextradomain` setting you can add additional domain names to the 
 Edit your LND node's `lnd.conf` file and set the `tlsextradomain` directive:
 
 ```toml
-tlsextradomain: [YOUR_DOMAIN]
+tlsextradomain=[YOUR_DOMAIN]
 ```
 
 Replace `[YOUR_DOMAIN]` with the DNS name of your node. For example, if your LND node is accessible at `mylndnode.dyndns.org` you would set it like so:
 
 ```toml
-tlsextradomain: mylndnode.ddns.net
+tlsextradomain=mylndnode.ddns.net
 ```
 
 This will allow you to connect to the LND node's gRPC or REST interface using your nodes DNS name.
@@ -92,7 +92,7 @@ If you intend to run Zap on another computer you will need to reconfigure your L
 Edit your `lnd.conf` file and set the `rpclisten` directive:
 
 ```toml
-rpclisten: [HOST]:[PORT]
+rpclisten=[HOST]:[PORT]
 ```
 
 Replace `[HOST]:[PORT]` with the interface to listen on for gRPC connections. For example, to accept connections on all external interfaces, you would set it like so:
